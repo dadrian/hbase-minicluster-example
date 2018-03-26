@@ -25,8 +25,8 @@ public class HbaseTest {
             "org.apache.hadoop.hbase.shaded.");
     utility = new HBaseTestingUtility();
     utility.startMiniCluster();
-    HTable table = utility.createTable(TableName.valueOf("mutator_test_table"),
-        new byte[][]{Bytes.toBytes("protocols"), Bytes.toBytes("metadata"), Bytes.toBytes("sys")});
+    HTable table = utility.createTable(TableName.valueOf("test_table"),
+        new byte[][]{Bytes.toBytes("a"), Bytes.toBytes("b"), Bytes.toBytes("c")});
   }
 
   @After
@@ -35,7 +35,7 @@ public class HbaseTest {
   }
 
   @Test
-  public void testApplyNewAtom() throws IOException {
+  public void testTrue() throws Exception {
     assertEquals(true, true);
   }
 }
