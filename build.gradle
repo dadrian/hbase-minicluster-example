@@ -15,10 +15,9 @@ dependencies {
   compile ('com.google.guava:guava:14.0.1') {
     force = true
   }
-  testCompile 'org.apache.hadoop:hadoop-minicluster:2.5.1'
-  testCompile "org.apache.hbase:hbase-server:1.4.1"
-  testCompile "org.apache.hbase:hbase-server:1.4.1:tests"
-  testCompile 'org.apache.hbase:hbase-hadoop-compat:1.4.1:tests'
-  testCompile 'org.apache.hbase:hbase-hadoop2-compat:1.4.1:tests'
+  testCompile('org.apache.hbase:hbase-testing-util:1.4.1') {
+    exclude group: 'tomcat', module: 'jasper-compiler'
+    exclude group: 'tomcat', module: 'jasper-runtime'
+  }
   testCompile 'junit:junit:4.11'
 }
