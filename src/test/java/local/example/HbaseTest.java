@@ -23,7 +23,7 @@ public class HbaseTest {
   public void setUp() throws Exception {
     System.setProperty("org.apache.hadoop.hbase.shaded.io.netty.packagePrefix",
             "org.apache.hadoop.hbase.shaded.");
-    utility = HBaseTestingUtility.createLocalHTU();
+    utility = new HBaseTestingUtility();
     utility.startMiniCluster();
     HTable table = utility.createTable(TableName.valueOf("mutator_test_table"),
         new byte[][]{Bytes.toBytes("protocols"), Bytes.toBytes("metadata"), Bytes.toBytes("sys")});
